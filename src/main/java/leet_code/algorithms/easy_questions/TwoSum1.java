@@ -3,11 +3,6 @@ package leet_code.algorithms.easy_questions;
 import java.util.*;
 
 public class TwoSum1 {
-
-    public int[] twoSum(int[] numbers, int target) {
-        return twoSumForce(numbers, target);
-    }
-
     // 暴力破解
     public int[] twoSumForce(int[] numbers, int target) {
         final int[] result = new int[2];
