@@ -44,16 +44,16 @@ public class TwoSum1 {
         for (int index = 0; index < numbers.length; index++) {
             cache.add(new Node(index, numbers[index]));
         }
-        cache.sort(Comparator.comparingInt((Node node) -> node.value));
+        cache.sort(Comparator.comparingInt(Node::getValue));
         int left = 0;
         int right = cache.size() - 1;
         while (left < right) {
             final Node leftNode = cache.get(left);
             final Node rightNode = cache.get(right);
-            final int leftValue = leftNode.value;
-            final int rightValue = rightNode.value;
-            final int leftIndex = leftNode.index;
-            final int rightIndex = rightNode.index;
+            final int leftValue = leftNode.getValue();
+            final int rightValue = rightNode.getValue();
+            final int leftIndex = leftNode.getIndex();
+            final int rightIndex = rightNode.getIndex();
             if (leftValue + rightValue == target) return new int[]{leftIndex, rightIndex};
             if (leftValue + rightValue < target) {
                 left++;
@@ -64,6 +64,42 @@ public class TwoSum1 {
         return new int[]{};
     }
 
-    record Node(int index, int value) {
+    static final class Node {
+        private final int index;
+        private final int value;
+
+        Node(int index, int value) {
+            this.index = index;
+            this.value = value;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) return true;
+            if (obj == null || obj.getClass() != this.getClass()) return false;
+            var that = (Node) obj;
+            return this.index == that.index &&
+                    this.value == that.value;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(index, value);
+        }
+
+        @Override
+        public String toString() {
+            return "Node[" +
+                    "index=" + index + ", " +
+                    "value=" + value + ']';
+        }
     }
 }
