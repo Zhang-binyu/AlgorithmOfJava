@@ -8,7 +8,6 @@ public class AddTwoNumbers2 {
     ///
     /// 空间复杂度: O(1)
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
         final ListNode dummy = new ListNode(0);
         ListNode current = dummy;
 
@@ -16,10 +15,10 @@ public class AddTwoNumbers2 {
 
         while (l1 != null || l2 != null || carry != 0) {
 
-            int val1 = l1 != null ? l1.val : 0;
-            int val2 = l2 != null ? l2.val : 0;
+            final int val1 = l1 != null ? l1.val : 0;
+            final int val2 = l2 != null ? l2.val : 0;
 
-            int sum = val1 + val2 + carry;
+            final int sum = val1 + val2 + carry;
 
             carry = sum / 10;
 
