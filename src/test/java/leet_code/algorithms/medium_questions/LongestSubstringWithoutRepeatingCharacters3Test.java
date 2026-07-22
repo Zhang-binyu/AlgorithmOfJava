@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LongestSubstringWithoutRepeatingCharacters3Test {
-    private final LongestSubstringWithoutRepeatingCharacters3 instance =
-            new LongestSubstringWithoutRepeatingCharacters3();
+    private final LongestSubstringWithoutRepeatingCharacters3 instance = new LongestSubstringWithoutRepeatingCharacters3();
+
+    private final int firstAnswer = 3;
+    private final int secondAnswer = 1;
+    private final int thirdAnswer = 3;
+    private final int forthAnswer = 2;
 
     @Test
     void usingHashSet() {
-        final int firstAnswer = 3;
-        final int secondAnswer = 1;
-        final int thirdAnswer = 3;
-        final int forthAnswer = 2;
         final int firstExample = instance.usingHashSet("abcabcbb");
         final int secondExample = instance.usingHashSet("bbbbb");
         final int thirdExample = instance.usingHashSet("pwwkew");
@@ -26,10 +26,6 @@ class LongestSubstringWithoutRepeatingCharacters3Test {
 
     @Test
     void usingIntArray() {
-        final int firstAnswer = 3;
-        final int secondAnswer = 1;
-        final int thirdAnswer = 3;
-        final int forthAnswer = 2;
         final int firstExample = instance.usingIntArray("abcabcbb");
         final int secondExample = instance.usingIntArray("bbbbb");
         final int thirdExample = instance.usingIntArray("pwwkew");
