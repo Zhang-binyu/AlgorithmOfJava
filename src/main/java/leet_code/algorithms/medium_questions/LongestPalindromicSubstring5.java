@@ -33,10 +33,14 @@ public class LongestPalindromicSubstring5 {
             final int mirror = 2 * center - i;
 
             // 利用之前的信息
-            if (i < right) p[i] = Math.min(right - i, p[mirror]);
+            if (i < right) {
+                p[i] = Math.min(right - i, p[mirror]);
+            }
 
             // 中心扩展
-            while (t.charAt(i + p[i] + 1) == t.charAt(i - p[i] - 1)) p[i]++;
+            while (t.charAt(i + p[i] + 1) == t.charAt(i - p[i] - 1)) {
+                p[i]++;
+            }
 
             // 更新最右边界
             if (i + p[i] > right) {

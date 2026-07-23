@@ -54,7 +54,9 @@ public class TwoSum1 {
             final int rightValue = rightNode.getValue();
             final int leftIndex = leftNode.getIndex();
             final int rightIndex = rightNode.getIndex();
-            if (leftValue + rightValue == target) return new int[]{leftIndex, rightIndex};
+            if (leftValue + rightValue == target) {
+                return new int[]{leftIndex, rightIndex};
+            }
             if (leftValue + rightValue < target) {
                 left++;
             } else {
@@ -83,8 +85,12 @@ public class TwoSum1 {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj == this) return true;
-            if (obj == null || obj.getClass() != this.getClass()) return false;
+            if (obj == this) {
+                return true;
+            }
+            if (obj == null || obj.getClass() != this.getClass()) {
+                return false;
+            }
             var that = (Node) obj;
             return this.index == that.index &&
                     this.value == that.value;
